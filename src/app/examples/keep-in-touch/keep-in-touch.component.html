@@ -1,7 +1,7 @@
 <h2 class="text-center">Keep in touch?</h2>
 <form class="contact-form">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-duration="1000">
             <label>Name</label>
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -10,7 +10,7 @@
                 <input type="text" class="form-control" placeholder="Name" (focus)="focus=true" (blur)="focus=false">
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-left" data-aos-anchor-placement="top-center" data-aos-duration="2000">
             <label>Email</label>
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -20,8 +20,9 @@
             </div>
         </div>
     </div>
-    <label>Message</label>
-    <textarea class="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
+    <label data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-duration="1000">Message</label>
+    <textarea data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" class="form-control"
+        rows="4" style="resize: none;" placeholder="Tell us your thoughts and feelings..."></textarea>
     <div class="row">
         <div class="col-md-4 mr-auto ml-auto">
             <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
