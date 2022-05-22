@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row" data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-duration="1000">
+        <div class="col-md-8 mr-auto ml-auto">
+            <h1 class="title">TEST PTRESASTER NOW</h1>
+            <h3 class="description">Presaster has achieved a 79% accuracy at predicting if a tweet is about a disaster
+                or not. </h3>
+            <br>
+            <h5>All you have to do to test our bot, is to paste a tweet link and Boom
+                ! <br> Presaster will take care of
+                the
+                rest</h5>
+            <br>
+            <label data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-duration="1000">Tweet
+                URL</label>
+            <!-- <textarea data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000"
+                class="form-control" rows="4" style="resize: none;"
+                placeholder="Tell to Presaster a Tweet, and wait for the answer :) "></textarea> -->
+            <form (ngSubmit)="handleSumbit()" [formGroup]="predictForm">
+                <input required type="url" data-aos="fade-right" data-aos-anchor-placement="top-bottom"
+                    data-aos-duration="2000" class="form-control" formControlName="tweet_url"
+                    placeholder="Post the tweet url here and let Presaster do the next steps for you">
+                <div *ngIf="errorMessage">
+                    {{errorMessage}}
+                </div>
+                <br>
+                <button [disabled]="predictForm.invalid" type="submit" class="btn btn-round">Predict
+                    <img src="assets/img/Presaster_logo.png" width="20" height="20" alt=""></button>
+            </form>
+
+        </div>
+    </div>
+    <br /><br />
+
+</div>

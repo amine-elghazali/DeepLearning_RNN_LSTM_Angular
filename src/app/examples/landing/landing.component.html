@@ -1,21 +1,25 @@
-<div class="page-header" data-parallax="true" style="background-image: url('./assets/img/robot.jpg');">
+<div #top class="page-header" data-parallax="true" style="background-image: url('./assets/img/robot.jpg');">
     <div class="filter"></div>
     <div class="container">
         <div>
             <h1 data-aos="fade-up" data-aos-duration="1000" class="motto text-center">PRESASTER</h1>
-            <h3 data-aos="fade-up" data-aos-duration="2000" class="motto text-center">Scroll down to know more about
-                PRESASTER</h3>
             <br />
-            <div data-aos="fade-up" data-aos-duration="3000" class="motto text-center" id="scroll-down-animation"
-                style="padding-top: 150px;">
-                <span class="mouse">
+            <h3 data-aos="fade-up" data-aos-duration="1500" class="motto text-center">Scroll down to know more about
+                PRESASTER</h3>
+            <br>
+            <div data-aos="fade-up" data-aos-duration="2000" class="motto text-center" id="scroll-down-animation">
+                <span style="cursor:pointer ;" (click)="scrollToElement(main_section)" class="mouse">
                     <span class="move"></span>
                 </span>
             </div>
+            <br>
+            <h3 data-aos="fade-up" data-aos-duration="3000" class="motto text-center">
+                <a (click)="scrollToElement(presastersection)" class="btn btn-default btn-round">PRESASTER SECTION</a>
+            </h3>
         </div>
     </div>
 </div>
-<div class="main">
+<div #main_section class="main">
     <div class="section text-center">
         <app-features></app-features>
     </div>
@@ -23,6 +27,12 @@
     <div class="section section-dark text-center">
         <div class="container">
             <app-about-us></app-about-us>
+        </div>
+    </div>
+
+    <div #presastersection class="section text-center">
+        <div class="container">
+            <app-presaster-section></app-presaster-section>
         </div>
     </div>
 
