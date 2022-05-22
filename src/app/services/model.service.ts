@@ -14,14 +14,16 @@ export class ModelService {
   ) { }
 
   getEndPoint(): Observable<any> {
-    const res = this.http.get('localhost:5000/predict')
+    const res = this.http.get('http://localhost:5000/predict')
     console.log(res);
 
     return res
   }
 
   getPrediction(tweet_url): Observable<any> {
-    return this.http.post('localhost:5000/predict', tweet_url);
+    return this.http.post('http://localhost:5000/predict', {
+      'tweet_url': tweet_url
+    });
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { ModelService } from 'app/services/model.service';
+import { ModelResult } from '../model/model_result';
 
 @Component({
   selector: 'app-presaster-section',
@@ -14,6 +15,13 @@ export class PresasterSectionComponent implements OnInit {
 
   errorMessage?: string
 
+  modelResult?: ModelResult
+
+  waiting: boolean = false
+  lastResult: boolean = false
+
+  final_text?: string
+  isDisaster?: any
 
   predictForm = new FormGroup({
     tweet_url: new FormControl('', {
@@ -47,12 +55,37 @@ export class PresasterSectionComponent implements OnInit {
       return;
     }
     else {
-      // this.modelService.getPrediction(this.getUrl()).subscribe({
-      //   next: (resp) => (console.log(resp)),
-      //   error: (e) => console.log(e)
+      this.waiting = true
+      this.modelService.getPrediction(this.getUrl()).subscribe({
+        next: (resp) => {
+          console.log(resp.final_text)
+          console.log(resp.isDisaster)
 
-      // })
-      this.getModelApi()
+          this.final_text = resp.final_text
+          this.isDisaster = resp.isDisaster
+          // switch (resp.isDisaster) {
+          //   case -1:
+          //     this.isDisaster = -1
+          //     break;
+          //   case 0:
+          //     this.isDisaster = 0
+          //     break;
+          //   case 1:
+          //     this.isDisaster = DisasterDegree.sure
+          //     break;
+
+          //   default:
+          //     break;
+          // }
+
+        },
+        error: (e) => console.log(e),
+        complete: () => {
+          this.waiting = false
+          this.lastResult = true
+        }
+      })
+      // this.getModelApi()
     }
 
   }

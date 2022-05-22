@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="waiting==false" class="container">
     <div class="row" data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-duration="1000">
         <div class="col-md-8 mr-auto ml-auto">
             <h1 class="title">TEST PTRESASTER NOW</h1>
@@ -31,4 +31,15 @@
     </div>
     <br /><br />
 
+</div>
+
+<div *ngIf="waiting">
+    Presaster is thinking :)
+</div>
+
+<div *ngIf="lastResult">
+    <h3>The result for your last prediction was : </h3>
+    {{ final_text }}
+    <br>
+    {{ isDisaster }}
 </div>
