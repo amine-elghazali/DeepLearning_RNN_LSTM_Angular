@@ -63,21 +63,6 @@ export class PresasterSectionComponent implements OnInit {
 
           this.final_text = resp.final_text
           this.isDisaster = resp.isDisaster
-          // switch (resp.isDisaster) {
-          //   case -1:
-          //     this.isDisaster = -1
-          //     break;
-          //   case 0:
-          //     this.isDisaster = 0
-          //     break;
-          //   case 1:
-          //     this.isDisaster = DisasterDegree.sure
-          //     break;
-
-          //   default:
-          //     break;
-          // }
-
         },
         error: (e) => console.log(e),
         complete: () => {

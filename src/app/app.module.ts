@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
-import { HomeModule } from './examples/home.module';
+import { HomeModule } from './home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({

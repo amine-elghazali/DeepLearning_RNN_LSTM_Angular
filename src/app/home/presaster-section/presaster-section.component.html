@@ -38,8 +38,21 @@
 </div>
 
 <div *ngIf="lastResult">
-    <h3>The result for your last prediction was : </h3>
-    {{ final_text }}
+    <h3>About the last Url you gave us, presaster says that : </h3>
     <br>
-    {{ isDisaster }}
+    <div [ngSwitch]="isDisaster">
+        <h4 *ngSwitchCase="-1">
+            Hmmm 🤔 That doesn't like a disaster tweet
+        </h4>
+
+        <h4 *ngSwitchCase="0">
+            I'm not sure but maybe this one is talking about a disaster 🙄
+        </h4>
+
+        <h4 *ngSwitchCase="1">
+            I'm quiet sure this tweet is talking about a disaster 😌
+        </h4>
+    </div>
+
+
 </div>
