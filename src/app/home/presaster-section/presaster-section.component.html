@@ -1,7 +1,7 @@
-<div *ngIf="waiting==false" class="container">
+<h1 class="title">TEST PTRESASTER NOW</h1>
+<div *ngIf="!waiting" class="container">
     <div class="row" data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-duration="1000">
         <div class="col-md-8 mr-auto ml-auto">
-            <h1 class="title">TEST PTRESASTER NOW</h1>
             <h3 class="description">Presaster has achieved a 79% accuracy at predicting if a tweet is about a disaster
                 or not. </h3>
             <br>
@@ -34,10 +34,11 @@
 </div>
 
 <div *ngIf="waiting">
-    Presaster is thinking :)
+    <h2>Let presaster think for a second</h2>
+    <img src="../../../assets/img/robot_thinking.gif" width="400" height="275" alt="presaster's thinking">
 </div>
 
-<div *ngIf="lastResult">
+<div *ngIf="lastResult && !waiting">
     <h3>About the last Url you gave us, presaster says that : </h3>
     <br>
     <div [ngSwitch]="isDisaster">
